@@ -1,0 +1,59 @@
+IMAGEASSESS MODEL EVALUATION
+============================================================
+
+Dataset rows: 11200
+Features: 26
+Test samples: 2240
+
+Accuracy: 89.46%
+Balanced Accuracy: 87.40%
+
+Classification Report
+------------------------------------------------------------
+                       precision    recall  f1-score   support
+
+           ACCEPTABLE     0.5906    0.9375    0.7246       320
+             DEGRADED     0.9866    0.9781    0.9823      1280
+POTENTIALLY_DEFECTIVE     0.9762    0.7063    0.8196       640
+
+             accuracy                         0.8946      2240
+            macro avg     0.8511    0.8740    0.8422      2240
+         weighted avg     0.9271    0.8946    0.8990      2240
+
+
+Confusion Matrix
+------------------------------------------------------------
+                               Predicted: ACCEPTABLE  Predicted: DEGRADED  Predicted: POTENTIALLY_DEFECTIVE
+Actual: ACCEPTABLE                               300                   12                                 8
+Actual: DEGRADED                                  25                 1252                                 3
+Actual: POTENTIALLY_DEFECTIVE                    183                    5                               452
+
+Feature Importance
+------------------------------------------------------------
+                  feature  importance
+       sharpness_relative    0.107894
+           relative_noise    0.100519
+       laplacian_variance    0.088703
+           noise_estimate    0.084955
+       bright_pixel_ratio    0.071915
+       edge_texture_ratio    0.057483
+contrast_percentile_range    0.047645
+             edge_density    0.040713
+     low_saturation_ratio    0.037985
+          saturation_mean    0.031833
+    saturation_normalized    0.031751
+                  entropy    0.030291
+             contrast_std    0.028559
+           brightness_std    0.028325
+    brightness_normalized    0.022581
+          brightness_mean    0.021903
+               green_mean    0.021777
+      dark_bright_balance    0.021170
+                 red_mean    0.020437
+     green_red_difference    0.018357
+           saturation_std    0.017870
+                blue_mean    0.017536
+      blue_red_difference    0.013786
+            colour_spread    0.012874
+        relative_contrast    0.011618
+         dark_pixel_ratio    0.011520

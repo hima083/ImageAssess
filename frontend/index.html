@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ImageAssess — Visual Quality Intelligence</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="brand">
+
+        <span class="logo">◈</span>
+
+        <div>
+            <h1>ImageAssess</h1>
+            <p>Visual Quality Intelligence</p>
+        </div>
+
+    </div>
+
+    <span class="status">● API READY</span>
+
+</header>
+
+
+<main>
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="hero">
+
+        <p class="eyebrow">IMAGE QUALITY ANALYSIS ENGINE</p>
+
+        <h2>
+            Know what's wrong with an image.
+        </h2>
+
+        <p>
+            Upload an image and let the quality engine inspect
+            sharpness, exposure, noise and visual defects.
+        </p>
+
+    </section>
+
+
+    <!-- =====================================================
+         IMAGE UPLOAD
+    ====================================================== -->
+
+    <section class="upload-card">
+
+        <input
+            type="file"
+            id="imageInput"
+            accept=".jpg,.jpeg,.png"
+        >
+
+        <div id="previewBox">
+
+            <div class="upload-icon">＋</div>
+
+            <h3>Drop an image here</h3>
+
+            <p>JPG or PNG</p>
+
+        </div>
+
+
+        <button id="analyzeBtn">
+            Analyze Image
+        </button>
+
+
+        <div id="loading" class="hidden">
+            Analyzing image...
+        </div>
+
+
+        <div id="error" class="error"></div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ANALYSIS RESULT
+    ====================================================== -->
+
+    <section id="result" class="hidden">
+
+
+        <!-- RESULT HEADER -->
+
+        <div class="result-header">
+
+            <div>
+
+                <p class="eyebrow">
+                    ASSESSMENT RESULT
+                </p>
+
+                <h2 id="qualityLabel">
+                    —
+                </h2>
+
+                <p
+                    id="diagnosisText"
+                    class="diagnosis-text"
+                >
+                    Waiting for analysis.
+                </p>
+
+            </div>
+
+
+            <div class="score">
+
+                <span id="qualityScore">
+                    0
+                </span>
+
+                <small>/100</small>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             DIAGNOSIS + CONFIDENCE
+        ================================================== -->
+
+        <div class="grid">
+
+
+            <!-- QUALITY DIAGNOSIS -->
+
+            <div class="panel">
+
+                <p class="eyebrow">
+                    VISUAL DIAGNOSIS
+                </p>
+
+                <h3>
+                    Quality Diagnosis
+                </h3>
+
+
+                <div id="diagnosis">
+
+                    <div class="diagnosis-item">
+
+                        <span class="diagnosis-dot"></span>
+
+                        <div>
+
+                            <strong>
+                                Analysis pending
+                            </strong>
+
+                            <small>
+                                Upload an image to begin.
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- MODEL CONFIDENCE -->
+
+            <div class="panel">
+
+                <p class="eyebrow">
+                    MODEL OUTPUT
+                </p>
+
+                <h3>
+                    Prediction Confidence
+                </h3>
+
+                <div id="confidence"></div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             DETECTED ISSUES
+        ================================================== -->
+
+        <div class="panel">
+
+            <p class="eyebrow">
+                DIAGNOSTIC SIGNALS
+            </p>
+
+            <h3>
+                Detected Issues
+            </h3>
+
+            <div id="issues">
+
+                <div class="issue">
+
+                    <strong>
+                        No issues detected.
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             IMAGE STATISTICS
+        ================================================== -->
+
+        <div class="panel">
+
+            <p class="eyebrow">
+                FEATURE PROFILE
+            </p>
+
+            <h3>
+                Image Statistics
+            </h3>
+
+            <div
+                id="statistics"
+                class="stats"
+            ></div>
+
+        </div>
+
+
+        <!-- =================================================
+             RECOMMENDATION
+        ================================================== -->
+
+        <div class="panel recommendation-panel">
+
+            <p class="eyebrow">
+                RECOMMENDED ACTION
+            </p>
+
+            <h3 id="recommendation">
+                —
+            </h3>
+
+            <p id="recommendationText">
+                Analysis recommendations will appear here.
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- =====================================================
+         ANALYSIS HISTORY
+    ====================================================== -->
+
+    <section class="history-section">
+
+
+        <div class="history-heading">
+
+            <div>
+
+                <p class="eyebrow">
+                    AUDIT TRAIL
+                </p>
+
+                <h2>
+                    Recent Analyses
+                </h2>
+
+            </div>
+
+
+            <button id="historyBtn">
+                Refresh
+            </button>
+
+        </div>
+
+
+        <div id="history"></div>
+
+    </section>
+
+
+</main>
+
+
+<script src="app.js"></script>
+
+</body>
+
+</html>

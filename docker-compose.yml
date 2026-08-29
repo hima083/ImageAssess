@@ -1,0 +1,9 @@
+services:
+  imageassess:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/uploads:/app/backend/uploads
+      - ./backend/analysis.db:/app/backend/analysis.db
+    restart: unless-stopped
